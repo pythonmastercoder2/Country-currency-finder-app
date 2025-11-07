@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Currency Finder</title>
+</head>
+<body>
+  <h1>What is the Country Currency?</h1>
+
+  <form action="/" method="POST">
+    <label for="country">Country name:</label>
+    <input type="text" id="country" name="country" required />
+    <button type="submit">Find currency</button>
+  </form>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <% if (currencyName) { %>
+    <p>
+      Currency of <strong><%= countryName %></strong>:
+      <%= currencyName %> (<%= currencyCode %>),
+      symbol: <%= currencySymbol %>
+    </p>
+  <% } %>
+</body>
+</html>
